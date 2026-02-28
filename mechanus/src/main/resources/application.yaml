@@ -1,3 +1,9 @@
 spring:
   application:
-    name: Server
+    name: Mechanus
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mechanus
+    password: postgres
+    username: postgres
+    driver-class-name: org.postgresql.Driver
