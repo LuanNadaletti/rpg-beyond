@@ -15,3 +15,8 @@ spring:
 server:
   servlet:
     context-path: /api
+
+app:
+  seed:
+    dnd2024:
+      enabled: true
