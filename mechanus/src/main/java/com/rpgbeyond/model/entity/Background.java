@@ -1,4 +1,4 @@
-package com.rpgbeyond.model;
+package com.rpgbeyond.model.entity;
 
 import jakarta.persistence.*;
 
@@ -7,7 +7,7 @@ public class Background {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
     @Column(nullable = false)
     private String name;
