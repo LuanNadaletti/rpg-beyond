@@ -6,11 +6,18 @@ import {
 } from "react-router";
 import './index.css';
 import App from './App';
+import CreateCharacter from "../pages/create-character.tsx";
 
-let router = createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: "/",
     Component: App,
+      children: [
+          {
+              path: "/create",
+              Component: CreateCharacter
+          },
+      ]
   },
 ]);
 
