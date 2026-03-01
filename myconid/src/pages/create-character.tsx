@@ -47,13 +47,13 @@ export default function CreateCharacter(): ReactNode {
     };
 
     return (
-        <form onSubmit={ handleSubmit(onSubmit) } noValidate>
+        <form onSubmit={handleSubmit(onSubmit)} noValidate>
             <div className="flex flex-col gap-2">
-                { loadError && (
+                {loadError && (
                     <div className="p-2 border border-red-600 text-red-700">
-                        { loadError }
+                        {loadError}
                     </div>
-                ) }
+                )}
 
                 <div>
                     <label htmlFor="name" className="font-bold">
@@ -63,12 +63,12 @@ export default function CreateCharacter(): ReactNode {
                         id="name"
                         type="text"
                         className="p-1 border border-zinc-950 w-full"
-                        aria-invalid={ !!errors.name }
-                        { ...register("name") }
+                        aria-invalid={!!errors.name}
+                        {...register("name")}
                     />
-                    { errors.name?.message && (
-                        <p className="mt-1 text-sm text-red-700">{ errors.name.message }</p>
-                    ) }
+                    {errors.name?.message && (
+                        <p className="mt-1 text-sm text-red-700">{errors.name.message}</p>
+                    )}
                 </div>
 
                 <div>
@@ -78,26 +78,26 @@ export default function CreateCharacter(): ReactNode {
                     <select
                         id="classId"
                         defaultValue=""
-                        disabled={ !classes }
+                        disabled={!classes}
                         className="p-1 border border-zinc-950 w-full disabled:opacity-60"
-                        aria-invalid={ !!errors.classId }
-                        { ...register("classId", {
+                        aria-invalid={!!errors.classId}
+                        {...register("classId", {
                             setValueAs: (v) => (v === "" ? undefined : Number(v)),
-                        }) }
+                        })}
                     >
                         <option value="" disabled>
-                            { classes ? "Select a class..." : "Loading classes..." }
+                            {classes ? "Select a class..." : "Loading classes..."}
                         </option>
 
-                        { classes?.map((clazz) => (
-                            <option key={ clazz.id } value={ String(clazz.id) }>
-                                { clazz.name }
+                        {classes?.map((clazz) => (
+                            <option key={clazz.id} value={String(clazz.id)}>
+                                {clazz.name}
                             </option>
-                        )) }
+                        ))}
                     </select>
-                    { errors.classId?.message && (
-                        <p className="mt-1 text-sm text-red-700">{ errors.classId.message }</p>
-                    ) }
+                    {errors.classId?.message && (
+                        <p className="mt-1 text-sm text-red-700">{errors.classId.message}</p>
+                    )}
                 </div>
 
                 <div>
@@ -107,26 +107,26 @@ export default function CreateCharacter(): ReactNode {
                     <select
                         id="backgroundId"
                         defaultValue=""
-                        disabled={ !backgrounds }
+                        disabled={!backgrounds}
                         className="p-1 border border-zinc-950 w-full disabled:opacity-60"
-                        aria-invalid={ !!errors.backgroundId }
-                        { ...register("backgroundId", {
+                        aria-invalid={!!errors.backgroundId}
+                        {...register("backgroundId", {
                             setValueAs: (v) => (v === "" ? undefined : Number(v)),
-                        }) }
+                        })}
                     >
                         <option value="" disabled>
-                            { backgrounds ? "Select a background..." : "Loading backgrounds..." }
+                            {backgrounds ? "Select a background..." : "Loading backgrounds..."}
                         </option>
 
-                        { backgrounds?.map((bg) => (
-                            <option key={ bg.id } value={ String(bg.id) }>
-                                { bg.name }
+                        {backgrounds?.map((bg) => (
+                            <option key={bg.id} value={String(bg.id)}>
+                                {bg.name}
                             </option>
-                        )) }
+                        ))}
                     </select>
-                    { errors.backgroundId?.message && (
-                        <p className="mt-1 text-sm text-red-700">{ errors.backgroundId.message }</p>
-                    ) }
+                    {errors.backgroundId?.message && (
+                        <p className="mt-1 text-sm text-red-700">{errors.backgroundId.message}</p>
+                    )}
                 </div>
 
                 <div>
@@ -136,34 +136,34 @@ export default function CreateCharacter(): ReactNode {
                     <select
                         id="speciesId"
                         defaultValue=""
-                        disabled={ !species }
+                        disabled={!species}
                         className="p-1 border border-zinc-950 w-full disabled:opacity-60"
-                        aria-invalid={ !!errors.speciesId }
-                        { ...register("speciesId", {
+                        aria-invalid={!!errors.speciesId}
+                        {...register("speciesId", {
                             setValueAs: (v) => (v === "" ? undefined : Number(v)),
-                        }) }
+                        })}
                     >
                         <option value="" disabled>
-                            { species ? "Select a species..." : "Loading species..." }
+                            {species ? "Select a species..." : "Loading species..."}
                         </option>
 
-                        { species?.map((sp) => (
-                            <option key={ sp.id } value={ String(sp.id) }>
-                                { sp.name }
+                        {species?.map((sp) => (
+                            <option key={sp.id} value={String(sp.id)}>
+                                {sp.name}
                             </option>
-                        )) }
+                        ))}
                     </select>
-                    { errors.speciesId?.message && (
-                        <p className="mt-1 text-sm text-red-700">{ errors.speciesId.message }</p>
-                    ) }
+                    {errors.speciesId?.message && (
+                        <p className="mt-1 text-sm text-red-700">{errors.speciesId.message}</p>
+                    )}
                 </div>
 
                 <button
                     type="submit"
-                    disabled={ isSubmitting }
+                    disabled={isSubmitting}
                     className="mt-2 p-2 border border-zinc-950 disabled:opacity-60"
                 >
-                    { isSubmitting ? "Creating..." : "Create" }
+                    {isSubmitting ? "Creating..." : "Create"}
                 </button>
             </div>
         </form>
