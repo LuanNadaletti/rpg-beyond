@@ -6,7 +6,7 @@ function App() {
         <>
             <Header />
 
-            <div className="flex flex-col w-full p-18">
+            <div className="flex flex-col w-full p-8 items-center">
                 <Outlet />
             </div>
         </>

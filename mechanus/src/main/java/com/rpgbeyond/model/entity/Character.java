@@ -40,13 +40,6 @@ public class Character implements Serializable {
     public Character() {
     }
 
-    public Character(String name, long classId, long backgroundId, long speciesId) {
-        this.name = name;
-        this.classId = classId;
-        this.backgroundId = backgroundId;
-        this.speciesId = speciesId;
-    }
-
     public String getName() {
         return name;
     }
@@ -61,5 +54,45 @@ public class Character implements Serializable {
 
     public long getSpeciesId() {
         return speciesId;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setClassId(long classId) {
+        this.classId = classId;
+    }
+
+    public void setBackgroundId(long backgroundId) {
+        this.backgroundId = backgroundId;
+    }
+
+    public void setSpeciesId(long speciesId) {
+        this.speciesId = speciesId;
+    }
+
+    public void setStrength(int strength) {
+        this.strength = strength;
+    }
+
+    public void setDexterity(int dexterity) {
+        this.dexterity = dexterity;
+    }
+
+    public void setConstitution(int constitution) {
+        this.constitution = constitution;
+    }
+
+    public void setIntelligence(int intelligence) {
+        this.intelligence = intelligence;
+    }
+
+    public void setWisdom(int wisdom) {
+        this.wisdom = wisdom;
+    }
+
+    public void setCharisma(int charisma) {
+        this.charisma = charisma;
     }
 }
